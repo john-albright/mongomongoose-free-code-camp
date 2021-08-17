@@ -1,5 +1,10 @@
 require('dotenv').config();
+const mongoose = require('mongoose');
 
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 let Person;
 
@@ -9,7 +14,7 @@ const createAndSavePerson = (done) => {
 
 const createManyPeople = (arrayOfPeople, done) => {
   done(null /*, data*/);
-};
+};a
 
 const findPeopleByName = (personName, done) => {
   done(null /*, data*/);
