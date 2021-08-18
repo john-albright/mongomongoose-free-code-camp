@@ -26,17 +26,17 @@ const createAndSavePerson = (done) => {
 
   // Save the new person
   evaKim.save((err,data) => {
-    if (err) return done(err);
+    if (err) return console.error(err);
     done(null, data)
   });
 };
 
 const arrayOfPeople = [new Person({ name: 'Tommy Ford', age: 19, favoriteFoods: ['ice cream']}), 
-                       new Person({ name: 'Alice Cooper', age: 25, favoriteFoods: ['mashed potatoes', 'kale']})]
+                       new Person({ name: 'Alice Cooper', age: 25, favoriteFoods: ['mashed potatoes', 'kale']})];
 
 const createManyPeople = (arrayOfPeople, done) => {
   Person.create(arrayOfPeople, (err, people) => {
-    if (err) return done(err);
+    if (err) return console.error(err);
     done(null, people);
   });
 };
